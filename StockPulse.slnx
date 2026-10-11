@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="E:/Dev/StockPulse/stockpulse.client/stockpulse.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="E:/Dev/StockPulse/StockPulse.Server.Tests/StockPulse.Server.Tests.csproj" />
+  <Project Path="E:/Dev/StockPulse/StockPulse.Server/StockPulse.Server.csproj" />
+</Solution>
