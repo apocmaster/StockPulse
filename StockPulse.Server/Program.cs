@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StockPulse.Server.Contexts;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
