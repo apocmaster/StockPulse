@@ -1,5 +1,9 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using StockPulse.Server.Contexts;
+using StockPulse.Server.Repositories;
+using StockPulse.Server.Services;
+using StockPulse.Server.Validators;
 using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +13,12 @@ builder.Services.AddDbContext<StockPulseDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("StockPulseConnection")));
 
 // Add services to the container.
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+// Add validators to the container
+builder.Services.AddScoped<IValidator<CreateProductDto>, CreateProductValidator>();
+
 
 
 builder.Services.AddControllers();

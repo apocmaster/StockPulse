@@ -1,4 +1,5 @@
-﻿using StockPulse.Server.Entities;
+﻿using StockPulse.Server.Dtos;
+using StockPulse.Server.Entities;
 
 namespace StockPulse.Server.Mappings
 {
@@ -10,6 +11,16 @@ namespace StockPulse.Server.Mappings
             {
                 Name = dto.Name,
                 SKU = dto.SKU
+            };
+        }
+
+        public static ProductDto ToDto(this Product entity)
+        {
+            return new ProductDto
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                SKU = entity.SKU
             };
         }
 

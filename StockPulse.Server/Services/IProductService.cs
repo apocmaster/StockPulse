@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StockPulse.Server.Auxiliars;
+using StockPulse.Server.Entities;
 
 namespace StockPulse.Server.Services
 {
-    public class IProductService
+    public interface IProductService
     {
-        IActionResult Add(CreateProductDto product);
+        Task<Result<Product>> Add(CreateProductDto createProductDto);
+        Task<Result<Product?>> GetById(Guid id);
     }
 }
