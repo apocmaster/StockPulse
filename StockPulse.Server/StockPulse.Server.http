@@ -2,5 +2,38 @@
 
 GET {{StockPulse.Server_HostAddress}}/weatherforecast/
 Accept: application/json
+###
 
+# ########### Produtc
+
+# Echo test
+GET {{StockPulse.Server_HostAddress}}/api/product/echo
+Accept: application/json
+###
+
+# Get a product by id
+GET {{StockPulse.Server_HostAddress}}/api/product/cc98216f-c043-41f9-b0dc-fec158f9250d
+Accept: application/json
+###
+
+# Create a new product
+POST {{StockPulse.Server_HostAddress}}/api/product
+Accept: application/jsonno
+Content-Type: application/json
+
+{
+  "name": "Product02",
+  "SKU": "000-0002"
+}
+###
+
+# Should fail for parameter is missing 
+POST {{StockPulse.Server_HostAddress}}/api/product
+Accept: application/jsonno
+Content-Type: application/json
+
+{
+  "name": "Product03",
+  "SKU": null
+}
 ###

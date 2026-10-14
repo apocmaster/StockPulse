@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StockPulse.Server.Entities;
 
 namespace StockPulse.Server.Contexts
 {
@@ -7,7 +8,8 @@ namespace StockPulse.Server.Contexts
         public StockPulseDbContext(DbContextOptions<StockPulseDbContext> options) : base(options)
         {
         }
-        // Define your DbSets here, for example:
-        // public DbSet<YourEntity> YourEntities { get; set; }
+
+        // Define your DbSets here
+        public DbSet<Product> Products { get; set; }
     }
 }
